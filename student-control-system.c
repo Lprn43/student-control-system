@@ -12,25 +12,25 @@ ogr o[10];
 
 int ogr_gir()
 {
-    printf("Isim gir:");
+    printf("Write Students Name:");
     scanf("\n");
     fgets(o[ogr_sayi].isim,30,stdin);
     //scanf("%s",&o[ogr_sayi].isim);
     //printf("%s",o.isim);
-    printf("Okul No Gir:");
+    printf("Write Students School No:");
     scanf("%d",&o[ogr_sayi].okulno);
-    printf("Not Gir:");
+    printf("Write Students Grade:");
     scanf("%d",&o[ogr_sayi].not);
     ogr_sayi++;
-    printf("-Islem Tamamlandi Menuye Donuluyor-\n");
+    printf("-Process Completed. Returning to Main Menu-\n");
     menu();
 }
 int ogr_gor()
 {
     int n;
-    printf("Gormek Istediginiz Ogrencinin Sirasini Seciniz:");
+    printf("Write the number of the student you want to see:");
     scanf("%d",&n);
-    printf("Isim: %sNo: %d\nNot: %d\n",o[n-1].isim,o[n-1].okulno,o[n-1].not);
+    printf("Name: %sNo: %d\nGrade: %d\n",o[n-1].isim,o[n-1].okulno,o[n-1].not);
     menu();
 }
 int ort_hesap()
@@ -41,26 +41,26 @@ int ort_hesap()
         toplam = toplam + o[i].not;
     }
     ort = toplam/ogr_sayi;
-    printf("Sinif ortalamasi: %d\n",ort);
+    printf("Class's Average: %d\n",ort);
     menu();
 }
 int tum_ogr()
 {
     for (int i = 0; i < ogr_sayi; i++)
     {
-        printf("-%d. Ogrenci-\nIsim: %sNo: %d\nNot: %d\n",i+1,o[i].isim,o[i].okulno,o[i].not);
+        printf("-%d. Student-\nName: %sNo: %d\nGrade: %d\n",i+1,o[i].isim,o[i].okulno,o[i].not);
     }
     menu();
 }
 void menu()
 {
     int menusecim;
-    printf("1- Ogrenci Gir\n");
-    printf("2- Bir Ogrenciyi Goruntule\n");
-    printf("3- Tum Ogrencileri Goruntule\n");
-    printf("4- Ortalamayi Hesapla\n");
-    printf("5- Cikis\n");
-    printf("Islem Seciniz:");
+    printf("\n1- Sign a new student\n");
+    printf("2- View a student\n");
+    printf("3- View all students\n");
+    printf("4- Calculate class's average\n");
+    printf("5- Exit\n");
+    printf("Select a interaction:");
     scanf("%d",&menusecim);
     switch (menusecim)
     {
